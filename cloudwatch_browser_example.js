@@ -13,6 +13,22 @@ var end_time = new Date();
 start_time.setHours(end_time.getHours() - 1);
 var last_end_time = end_time;
 
+/*
+Metrics:
+
+AWS/AutoScaling 
+  AutoScalingGroupName thevent-test-1-WebServerGroup-1U7GSGD2TUB0V
+  Metric Name: GroupTotalInstances; GroupPendingInstances; GroupTerminatingInstances; GroupInServiceInstances
+
+AWS/EC2
+InstanceId: <instance ID>
+CPUUtilization; DiskReadOps; DiskWriteOps; NetworkIn; NetworkOut; StatusCheckFailed
+
+AWS/ELB
+LoadBalancerName: melvil-prod
+BackendConnectionErrors; HTTPCode_Backend_[2|3|4|5]XX; HTTPCode_ELB_[4|5]XX; HealthyHostCount; Latency; RequestCount; SurgeQueueLength
+*/
+
 $(document).ready(function() {
     var contentdiv = $('#content');
     var params = {
